@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wysebee Agent</string>
+    <string name="service_name">Wysebee Agent</string>
+    <string name="service_description">Lets the Wysebee agent you paired in the Wysebee Agent app see the screen and tap, type, swipe and open apps on this phone — only in the apps you allowed there, and only while it is not paused. Turn this off to stop it at once.</string>
+</resources>
