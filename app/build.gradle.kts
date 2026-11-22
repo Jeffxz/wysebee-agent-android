@@ -26,10 +26,9 @@ android {
         buildConfigField("String", "DEFAULT_CLOUD_URL", "\"https://app.wysebee.com\"")
     }
 
-    // The release key, never in the repo: its file and password are properties kept outside it
-    // (~/.gradle/gradle.properties, or -P). Every update must be signed with this same key, or
-    // phones refuse it. Without them a release build comes out unsigned (scripts/build.sh prod
-    // refuses that).
+    // The release key, never in the repo: its file and password are Gradle properties given
+    // outside it (~/.gradle/gradle.properties, or -P). Without them a release build comes out
+    // unsigned.
     val releaseStore = prop("WYSEBEE_AGENT_ANDROID_STORE_FILE")
     val releaseKey = if (releaseStore.isEmpty()) null else signingConfigs.create("release") {
         storeFile = file(releaseStore)
@@ -40,7 +39,7 @@ android {
 
     buildTypes {
         // Every build pairs with Wysebee's own server unless the person chooses another in the
-        // app, or scans a QR code another one shows (2026-11-22). The two builds are apps of
+        // app, or scans a QR code another one shows. The two builds are apps of
         // their own (package, name, data and keys), so both can be on one phone side by side.
         debug {
             // "Wysebee Agent Dev": debuggable, signed with the debug key.
