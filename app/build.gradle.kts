@@ -6,8 +6,8 @@ plugins {
 
 // The app's version, and the only place it is kept. Raise versionCode with every release:
 // a phone updates only to a higher one.
-val appVersion = "1.0.1"
-val appVersionCode = 2
+val appVersion = "1.1.0"
+val appVersionCode = 3
 
 fun prop(name: String): String = (project.findProperty(name) as String?)?.trim() ?: ""
 
